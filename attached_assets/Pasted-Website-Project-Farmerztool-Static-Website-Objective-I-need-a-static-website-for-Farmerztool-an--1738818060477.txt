@@ -1,0 +1,59 @@
+Website Project: Farmerztool Static Website
+
+Objective: I need a static website for Farmerztool, an agricultural ERP platform targeting small to medium-scale farmers. The website should include a home page, about page, solution page, contact us page, a demo button, login button, and a pricing page. It should have a modern, clean, and professional look with easy navigation, focusing on presenting the benefits of Farmerztool for its users.
+
+Pages & Content:
+Home Page:
+
+A hero section with a catchy headline introducing Farmerztool, such as: "Empowering Farmers Through Data-Driven Decisions."
+Brief introduction text about how Farmerztool helps farmers manage crops, animals, assets, and financials.
+Clear Call-to-Actions: "Request a Demo" button (linking to the demo page) and "Login" button (leading to the login page).
+Visuals: Background images or illustrations of farms, animals, and crops.
+Sections with brief overviews of the platform's key features:
+Crop Management
+Livestock Management
+Financial Tracking
+Task & Reminder System
+Footer: Include contact details, social media links, and a small text link to the Privacy Policy and Terms & Conditions pages.
+About Page:
+
+Introduce Farmerztool and its mission: to make farm management simpler and more efficient by helping farmers track every aspect of their operations.
+A section about the founder (me, Tafara Ushendibaba) and the vision for building the platform.
+Include a timeline or story of the company's growth and any milestones reached.
+Solutions Page:
+
+Headline: "Solutions for Every Farmer"
+Describe the specific benefits and solutions provided by Farmerztool:
+Farm Data Management: Centralized place for managing all farm operations.
+Livestock Tracking: Manage animal health, breeding, and production.
+Finance Management: Track farm income, expenses, and profitability.
+Task & Reminder System: Stay on top of farm tasks with a calendar and task reminder feature.
+Use icons or graphics to visually differentiate the solutions.
+Pricing Page:
+
+A clear and simple layout showing different pricing tiers for the Farmerztool platform.
+Include descriptions for each pricing tier, detailing what’s included (e.g., number of animals, features unlocked, support levels).
+Have a "Start Free Trial" button next to each pricing tier.
+Contact Us Page:
+
+A contact form where users can submit inquiries.
+Include phone number, email address, and a map showing the company location (optional).
+Provide social media links (Facebook, Instagram, etc.) in the footer.
+Demo Button:
+
+Prominent on the home page, pricing page, and solutions page.
+Clicking the button should take users to a separate landing page or trigger a form to request a demo.
+Login Button:
+
+A "Login" button visible on the header of all pages, directing users to a login page (link to be provided later).
+Consistent across all pages and easy to locate.
+Design & Style Guidelines:
+Clean, modern, and professional design.
+Color palette: Earthy tones like greens, browns, and yellows, representing agriculture and nature.
+Typography: Use clear, readable fonts, with larger sizes for headlines and smaller sizes for body text.
+Include relevant imagery, such as farms, crops, animals, and farmers in action.
+Responsive design to ensure it works well on both desktop and mobile.
+Additional Notes:
+Include SEO-friendly content and meta tags for each page.
+Ensure the site has fast loading times and works smoothly across all browsers.
+Implement analytics to track page visits and user behavior (if available).
