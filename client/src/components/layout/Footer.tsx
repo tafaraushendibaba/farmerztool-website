@@ -5,18 +5,18 @@ import { SiAppstore, SiGoogleplay } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary/5 py-12 border-t">
+    <footer className="bg-primary/5 py-8 md:py-12 border-t">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">FarmerzTool</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">FarmerzTool</h3>
             <p className="text-sm text-muted-foreground">
               Making farm management simpler and more efficient through data-driven decisions.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-medium mb-4">Quick Links</h4>
+          <div className="space-y-4">
+            <h4 className="font-medium">Quick Links</h4>
             <nav className="flex flex-col space-y-2">
               <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                 About
@@ -33,8 +33,8 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div>
-            <h4 className="font-medium mb-4">Legal</h4>
+          <div className="space-y-4">
+            <h4 className="font-medium">Legal</h4>
             <nav className="flex flex-col space-y-2">
               <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
@@ -46,8 +46,8 @@ export default function Footer() {
           </div>
 
           <div className="space-y-6">
-            <div>
-              <h4 className="font-medium mb-4">Connect With Us</h4>
+            <div className="space-y-4">
+              <h4 className="font-medium">Connect With Us</h4>
               <div className="flex space-x-4">
                 <a 
                   href="https://www.facebook.com/farmerztool/"
@@ -76,8 +76,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Download Our App</h4>
+            <div className="space-y-4">
+              <h4 className="font-medium">Download Our App</h4>
               <div className="flex space-x-4">
                 <a 
                   href="https://apps.apple.com/us/app/farmerztool"
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 bg-primary/10" />
+        <Separator className="my-6 md:my-8 bg-primary/10" />
 
         <div className="text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} FarmerzTool. Software developed and owned by Creative Studiosz LLC. All rights reserved.

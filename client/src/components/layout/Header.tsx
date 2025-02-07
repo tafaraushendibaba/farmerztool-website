@@ -7,11 +7,11 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import MobileNav from "./MobileNav";
 
 // We can configure these URLs based on your web app's environment
 const APP_URL = "https://app.farmerztool.com";
 const LOGIN_URL = `${APP_URL}/login`;
-const SIGNUP_URL = `${APP_URL}/signup`;
 
 export default function Header() {
   const [location] = useLocation();
@@ -28,8 +28,8 @@ export default function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Logo />
 
-        <NavigationMenu>
-          <NavigationMenuList className="hidden md:flex space-x-6">
+        <NavigationMenu className="hidden md:block">
+          <NavigationMenuList className="space-x-6">
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink
@@ -47,16 +47,19 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex items-center space-x-4">
-          <Button
-            variant="ghost"
-            onClick={() => window.open(LOGIN_URL, "_blank")}
-          >
-            Login
-          </Button>
-          <Button asChild>
-            <Link href="/request-demo">Request Demo</Link>
-          </Button>
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="ghost"
+              onClick={() => window.open(LOGIN_URL, "_blank")}
+            >
+              Login
+            </Button>
+            <Button asChild>
+              <Link href="/request-demo">Request Demo</Link>
+            </Button>
+          </div>
+          <MobileNav />
         </div>
       </div>
     </header>
