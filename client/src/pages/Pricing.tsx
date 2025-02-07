@@ -5,84 +5,98 @@ import { Link } from "wouter";
 
 const plans = [
   {
-    name: "Basic",
-    price: "$29",
-    description: "Perfect for small farms",
+    name: "Free Trial",
+    price: "$0",
+    duration: "30 days",
+    description: "Try all features risk-free",
     features: [
-      "Up to 100 animals",
-      "Basic crop management",
-      "Simple financial tracking",
+      "Full access to all features",
+      "Unlimited animals and crops",
+      "All management tools",
       "Email support",
+      "No credit card required"
     ],
   },
   {
-    name: "Professional",
-    price: "$79",
-    description: "For growing farm operations",
+    name: "Monthly",
+    price: "$12",
+    duration: "per month",
+    description: "Perfect for growing farms",
     features: [
-      "Up to 500 animals",
-      "Advanced crop management",
-      "Detailed financial analytics",
-      "Priority support",
-      "Team collaboration",
-    ],
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large scale farming",
-    features: [
-      "Unlimited animals",
-      "Custom features",
-      "API access",
-      "Dedicated support",
+      "All Free Trial features",
+      "Priority email support",
       "Advanced analytics",
+      "Custom reporting",
+      "Data export capabilities"
+    ],
+  },
+  {
+    name: "Annual",
+    price: "$100",
+    duration: "per year",
+    description: "Best value - Save $24/year",
+    features: [
+      "All Monthly features",
+      "2 months free",
+      "Premium support",
+      "API access",
       "Custom integrations",
+      "Dedicated account manager"
     ],
   },
 ];
 
 export default function Pricing() {
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
-          <p className="text-lg text-muted-foreground">
-            Choose the plan that best fits your needs
+    <div className="min-h-screen bg-background">
+      <div className="py-16 border-b bg-muted/5">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            Simple, Transparent Pricing
+          </h1>
+          <p className="text-xl text-muted-foreground text-center max-w-2xl mx-auto">
+            Start with a 30-day free trial. No credit card required.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan) => (
-            <Card key={plan.name}>
-              <CardHeader>
-                <CardTitle>
-                  <div className="text-2xl font-bold">{plan.name}</div>
-                  <div className="text-3xl font-bold mt-2">
-                    {plan.price}
-                    {plan.price !== "Custom" && (
-                      <span className="text-lg text-muted-foreground">/month</span>
-                    )}
+      <div className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {plans.map((plan) => (
+              <Card key={plan.name} className="relative hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle>
+                    <div className="text-2xl font-bold">{plan.name}</div>
+                    <div className="flex items-baseline mt-4">
+                      <span className="text-4xl font-bold">{plan.price}</span>
+                      <span className="text-lg text-muted-foreground ml-2">
+                        {plan.duration}
+                      </span>
+                    </div>
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">{plan.description}</p>
+                </CardHeader>
+                <CardContent className="flex flex-col h-full">
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <Button className="w-full" size="lg" asChild>
+                      <Link href="/request-demo">
+                        {plan.name === "Free Trial" ? "Start Free Trial" : "Get Started"}
+                      </Link>
+                    </Button>
                   </div>
-                </CardTitle>
-                <p className="text-muted-foreground">{plan.description}</p>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4 mb-6">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <Check className="h-5 w-5 text-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="/request-demo">Start Free Trial</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </div>
