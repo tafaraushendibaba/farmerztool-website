@@ -4,9 +4,9 @@ export default function Logo() {
   return (
     <Link href="/">
       <img 
-        src="/images/logo.jpg" 
+        src="/logo.jpg" 
         alt="FarmerzTool Logo" 
-        className="h-8 w-auto cursor-pointer"
+        className="h-8 md:h-10 w-auto cursor-pointer object-contain"
       />
     </Link>
   );
