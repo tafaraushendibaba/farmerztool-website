@@ -64,8 +64,8 @@ export default function Pricing() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan) => (
-              <Card key={plan.name} className="relative hover:shadow-lg transition-shadow">
-                <CardHeader>
+              <Card key={plan.name} className="flex flex-col hover:shadow-lg transition-shadow">
+                <CardHeader className="flex-grow">
                   <CardTitle>
                     <div className="text-2xl font-bold">{plan.name}</div>
                     <div className="flex items-baseline mt-4">
@@ -77,8 +77,8 @@ export default function Pricing() {
                   </CardTitle>
                   <p className="text-muted-foreground mt-2">{plan.description}</p>
                 </CardHeader>
-                <CardContent className="flex flex-col h-full">
-                  <ul className="space-y-4 mb-8">
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-4 mb-8 flex-grow">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -86,13 +86,16 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-auto">
-                    <Button className="w-full" size="lg" asChild>
-                      <Link href="/request-demo">
-                        {plan.name === "Free Trial" ? "Start Free Trial" : "Get Started"}
-                      </Link>
-                    </Button>
-                  </div>
+                  <Button 
+                    className="w-full mt-auto" 
+                    size="lg" 
+                    variant={plan.name === "Annual" ? "default" : "outline"}
+                    asChild
+                  >
+                    <Link href="/request-demo">
+                      {plan.name === "Free Trial" ? "Start Free Trial" : "Get Started"}
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
