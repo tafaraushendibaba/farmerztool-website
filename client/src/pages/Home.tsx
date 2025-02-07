@@ -199,7 +199,7 @@ export default function Home() {
               </div>
             </div>
             <StockImage
-              src="https://images.unsplash.com/photo-1590682687104-9f64c098604f"
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
               alt="Getting started with FarmerzTool"
               className="rounded-lg aspect-video"
             />
