@@ -8,22 +8,21 @@ export default function Logo() {
   useEffect(() => {
     // Preload the image to check if it exists
     const img = new Image();
-    img.src = "/logo.jpg";
+    img.src = "/logo.jpg"; // Using the public directory path
     img.onload = () => {
-      console.log("Logo loaded successfully");
       setImageLoaded(true);
       setError(false);
     };
-    img.onerror = (e) => {
-      console.error("Error loading logo:", e);
+    img.onerror = () => {
+      console.error("Error loading logo from /logo.jpg");
       setError(true);
     };
   }, []);
 
   return (
     <Link href="/">
-      <div className="flex items-center">
-        {!error ? (
+      <div className="flex items-center gap-2">
+        {!error && (
           <img 
             src="/logo.jpg"
             alt="FarmerzTool Logo" 
@@ -33,7 +32,7 @@ export default function Logo() {
             onLoad={() => setImageLoaded(true)}
             onError={() => setError(true)}
           />
-        ) : null}
+        )}
         <span 
           className={`text-xl font-bold text-primary ${
             error ? 'block' : 'hidden'
