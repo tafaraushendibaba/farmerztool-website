@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <Link href="/">
       <img 
-        src="/attached_assets/logo 1.jpg" 
+        src="/images/logo.jpg" 
         alt="FarmerzTool Logo" 
         className="h-8 w-auto cursor-pointer"
       />
