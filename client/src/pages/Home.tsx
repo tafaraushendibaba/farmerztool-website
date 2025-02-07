@@ -83,15 +83,8 @@ export default function Home() {
       <Hero />
       <Features />
 
-      {/* Countdown Section */}
-      <section className="py-16 bg-muted/5">
-        <div className="container mx-auto px-4">
-          <CountdownTimer />
-        </div>
-      </section>
-
       {/* AI and ML Section */}
-      <section className="py-24 bg-muted/5">
+      <section className="py-24 bg-muted/5 border-y">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -102,12 +95,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {aiFeatures.map((feature) => (
-              <Card key={feature.title}>
+              <Card key={feature.title} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
+                  <div className="p-3 rounded-lg bg-primary/10 w-fit">
+                    <feature.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{feature.description}</p>
@@ -121,7 +116,7 @@ export default function Home() {
       {/* Management Features Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">
                 Comprehensive Management Suite
@@ -130,9 +125,9 @@ export default function Home() {
                 From health tracking to breeding management, FarmerzTool provides everything
                 you need to run your farm efficiently.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {managementFeatures.map((feature) => (
-                  <div key={feature.title} className="flex gap-4">
+                  <div key={feature.title} className="flex gap-4 p-4 rounded-lg bg-muted/5 hover:bg-muted/10 transition-colors">
                     <div className="h-2 w-2 rounded-full bg-primary mt-2" />
                     <div>
                       <h3 className="font-semibold mb-1">{feature.title}</h3>
@@ -145,14 +140,14 @@ export default function Home() {
             <StockImage
               src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae"
               alt="Modern farm management"
-              className="rounded-lg aspect-video"
+              className="rounded-lg aspect-video shadow-lg"
             />
           </div>
         </div>
       </section>
 
-      {/* Platform Accessibility Section */}
-      <section className="py-24 bg-muted/5">
+      {/* Platform Features Section */}
+      <section className="py-24 bg-muted/5 border-y">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -165,10 +160,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {platformFeatures.map((feature) => (
-              <Card key={feature.title}>
+              <Card key={feature.title} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>{feature.title}</CardTitle>
+                  <div className="p-3 rounded-lg bg-primary/10 w-fit">
+                    <feature.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{feature.description}</p>
@@ -187,13 +184,13 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-6">
                 Getting Started is Easy
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {getStartedSteps.map((step, index) => (
-                  <div key={index} className="flex gap-4">
+                  <div key={index} className="flex gap-4 p-4 rounded-lg bg-muted/5">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                       {index + 1}
                     </div>
-                    <p className="text-lg">{step}</p>
+                    <p className="text-lg pt-1">{step}</p>
                   </div>
                 ))}
               </div>
@@ -201,14 +198,14 @@ export default function Home() {
             <StockImage
               src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
               alt="Getting started with FarmerzTool"
-              className="rounded-lg aspect-video"
+              className="rounded-lg aspect-video shadow-lg"
             />
           </div>
         </div>
       </section>
 
-      {/* Value Proposition Section */}
-      <section className="py-24 bg-muted/5">
+      {/* Benefits Section */}
+      <section className="py-24 bg-muted/5 border-y">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -219,12 +216,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {benefits.map((benefit) => (
-              <Card key={benefit.title}>
+              <Card key={benefit.title} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <benefit.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle>{benefit.title}</CardTitle>
+                  <div className="p-3 rounded-lg bg-primary/10 w-fit">
+                    <benefit.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{benefit.description}</p>
@@ -233,12 +232,12 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="max-w-2xl mx-auto prose">
-              <h3 className="text-2xl font-semibold mb-4">
+          <div className="mt-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl font-bold mb-4">
                 Transforming Agriculture Through Technology
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-lg text-muted-foreground">
                 FarmerzTool brings the power of modern technology to your farm. Our platform
                 helps you reduce costs, increase productivity, and make better decisions through
                 data-driven insights. With features like automated documentation, AI-powered
@@ -249,24 +248,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-24">
+      {/* Countdown Section */}
+      <section className="py-16 bg-muted/5 border-y">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                Transform Your Farming Operations
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Join thousands of farmers who are using Farmerztool to streamline
-                their operations and increase productivity.
-              </p>
-            </div>
-            <StockImage
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef"
-              alt="Beautiful farm landscape"
-              className="rounded-lg aspect-video"
-            />
-          </div>
+          <CountdownTimer />
         </div>
       </section>
     </div>
