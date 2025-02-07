@@ -3,11 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
 const valuePropositions = [
-  "Streamline farm operations with integrated management tools",
-  "Make data-driven decisions with AI-powered insights",
-  "Save time and reduce manual paperwork",
-  "Improve farm profitability through better resource management",
-  "Access your farm data anywhere, anytime",
+  "Custom-built for small and medium-scale farming operations",
+  "Designed with input from real farmers and homesteaders",
+  "Simplified tools that respect traditional farming practices",
+  "Affordable solutions for family-run operations",
+  "Community-focused approach to farm management",
 ];
 
 const whyChooseUs = [
@@ -40,20 +40,21 @@ export default function About() {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              We're on a mission to revolutionize farm management by making it simpler,
-              more efficient, and data-driven. We believe that every farmer should have
-              access to powerful tools that help them make better decisions and improve
-              their productivity.
+              We're on a mission to empower small-scale and family farmers with practical, 
+              easy-to-use technology. We believe that every farmer, from homesteaders to 
+              medium-sized operations, deserves access to tools that respect their way of 
+              farming while helping them grow and succeed.
             </p>
             <p className="text-lg text-muted-foreground">
-              Through innovative technology and advanced analytics, we empower
-              farmers to transform their operations, reduce costs, and increase
-              profitability while promoting sustainable farming practices.
+              Through thoughtfully designed features and a deep understanding of real 
+              farming needs, we help farmers maintain their traditional practices while 
+              embracing modern efficiency - all without overwhelming complexity or 
+              unnecessary features.
             </p>
           </div>
           <StockImage
             src="https://images.unsplash.com/photo-1495625039471-091b4c9aaa85"
-            alt="Farmer in the field"
+            alt="Family farmer in the field"
             className="rounded-lg aspect-video"
           />
         </div>

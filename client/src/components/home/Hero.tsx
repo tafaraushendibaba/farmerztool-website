@@ -8,11 +8,12 @@ export default function Hero() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empowering Farmers Through Data-Driven Decisions
+            Farm Management Software Built for Real Farmers
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-            Manage your crops, livestock, and finances all in one place. 
-            Make smarter decisions with Farmerztool's comprehensive farm management platform.
+            Designed specifically for small-scale farms, family operations, homesteaders, 
+            and community farms. A practical, easy-to-use platform that helps you manage 
+            your farm the way you want.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button size="lg" asChild>
@@ -23,7 +24,6 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* Added CountdownTimer here */}
           <div className="mt-12 max-w-xl mx-auto">
             <CountdownTimer />
           </div>

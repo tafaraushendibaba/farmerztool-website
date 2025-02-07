@@ -1,10 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Sprout, LineChart, FileText, Egg, 
-  Tractor, Database, Calculator, 
+import {
+  Sprout, LineChart, FileText, Egg,
+  Tractor, Database, Calculator,
   Calendar, Bug, Beaker, Leaf,
   Beef, Heart, Apple, Baby,
-  Receipt, FileSignature, Building
+  Receipt, FileSignature, Building,
+  Home, Users, Scale,
+  Warehouse // Using Warehouse instead of Garden for homesteaders
 } from "lucide-react";
 
 const solutions = [
@@ -157,22 +159,71 @@ const solutions = [
   },
 ];
 
+const targetAudience = [
+  {
+    title: "Small-Scale Farmers",
+    description: "Perfect for farmers managing 1-50 acres, focusing on sustainable and efficient farming practices.",
+    icon: Sprout,
+  },
+  {
+    title: "Family Farms",
+    description: "Built with multi-generational farms in mind, helping preserve and modernize family farming traditions.",
+    icon: Home,
+  },
+  {
+    title: "Homesteaders",
+    description: "Ideal for self-sufficient homesteaders managing diverse crops and livestock on their property.",
+    icon: Warehouse, // Changed from Garden to Warehouse
+  },
+  {
+    title: "Community Farms",
+    description: "Supporting collaborative farming initiatives and shared agricultural spaces.",
+    icon: Users,
+  },
+  {
+    title: "Medium-Scale Operations",
+    description: "Scalable solutions for growing farms looking to optimize their operations.",
+    icon: Scale,
+  }
+];
+
 export default function Solutions() {
   return (
     <div className="min-h-screen bg-background">
       <div className="py-16 border-b bg-muted/5">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Solutions for Every Farmer
+            Solutions Built By Farmers, For Farmers
           </h1>
           <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto">
-            Comprehensive tools designed to optimize your farming operations and increase productivity
+            Practical tools designed specifically for small and medium-scale farming operations
           </p>
         </div>
       </div>
 
       <div className="py-20">
         <div className="container mx-auto px-4">
+          {/* Who is this for section */}
+          <section className="mb-24">
+            <h2 className="text-3xl font-semibold text-center mb-12">Who is FarmerzTool For?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {targetAudience.map((audience) => (
+                <Card key={audience.title} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="p-3 rounded-lg bg-primary/10 w-fit">
+                      <audience.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="mt-4">{audience.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{audience.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Existing solutions content */}
           <div className="space-y-24">
             {solutions.map((solution) => (
               <section key={solution.title} className="scroll-mt-16">
