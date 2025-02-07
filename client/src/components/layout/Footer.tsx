@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Farmerztool</h3>
+            <h3 className="text-lg font-semibold mb-4">FarmerzTool</h3>
             <p className="text-sm text-muted-foreground">
               Making farm management simpler and more efficient through data-driven decisions.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
             <h4 className="font-medium mb-4">Connect With Us</h4>
             <div className="flex space-x-4">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/farmerztool/"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export default function Footer() {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/creativestudioszllc/"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,12 +64,12 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://www.youtube.com/@FarmerzTool"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter size={20} />
+                <Youtube size={20} />
               </a>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Footer() {
         <Separator className="my-8 bg-primary/10" />
 
         <div className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Farmerztool. All rights reserved.
+          © {new Date().getFullYear()} FarmerzTool. All rights reserved.
         </div>
       </div>
     </footer>
