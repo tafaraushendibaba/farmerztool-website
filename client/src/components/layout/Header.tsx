@@ -11,7 +11,6 @@ export default function Header() {
   const [location] = useLocation();
 
   const navItems = [
-    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/solutions", label: "Solutions" },
     { href: "/pricing", label: "Pricing" },
