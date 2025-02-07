@@ -46,6 +46,9 @@ const plans = [
   },
 ];
 
+// Assuming SIGNUP_URL is defined elsewhere in the application
+const SIGNUP_URL = "/signup"; // Replace with your actual signup URL
+
 export default function Pricing() {
   return (
     <div className="min-h-screen bg-background">
@@ -64,11 +67,11 @@ export default function Pricing() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan) => (
-              <Card 
-                key={plan.name} 
+              <Card
+                key={plan.name}
                 className={`flex flex-col hover:shadow-lg transition-shadow ${
-                  plan.name === "Monthly" 
-                    ? "border-primary border-2 shadow-lg relative" 
+                  plan.name === "Monthly"
+                    ? "border-primary border-2 shadow-lg relative"
                     : ""
                 }`}
               >
@@ -98,15 +101,25 @@ export default function Pricing() {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className="w-full mt-auto" 
-                    size="lg" 
-                    asChild
-                  >
-                    <Link href="/request-demo">
+                  {plan.name === "Free Trial" ? (
+                    <Button
+                      className="w-full mt-auto"
+                      size="lg"
+                      onClick={() => window.open(SIGNUP_URL, "_blank")}
+                    >
                       {plan.name === "Free Trial" ? "Start Free Trial" : "Get Started"}
-                    </Link>
-                  </Button>
+                    </Button>
+                  ) : (
+                    <Button
+                      className="w-full mt-auto"
+                      size="lg"
+                      asChild
+                    >
+                      <Link href="/request-demo">
+                        {plan.name === "Free Trial" ? "Start Free Trial" : "Get Started"}
+                      </Link>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}

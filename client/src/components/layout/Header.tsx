@@ -8,6 +8,11 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
+// We can configure these URLs based on your web app's environment
+const APP_URL = "https://app.farmerztool.com";
+const LOGIN_URL = `${APP_URL}/login`;
+const SIGNUP_URL = `${APP_URL}/signup`;
+
 export default function Header() {
   const [location] = useLocation();
 
@@ -45,7 +50,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <Button
             variant="ghost"
-            onClick={() => window.open("https://app.farmerztool.com/login")}
+            onClick={() => window.open(LOGIN_URL, "_blank")}
           >
             Login
           </Button>
