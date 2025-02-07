@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import CountdownTimer from "./CountdownTimer";
 
 export default function Hero() {
   return (
@@ -13,13 +14,18 @@ export default function Hero() {
             Manage your crops, livestock, and finances all in one place. 
             Make smarter decisions with Farmerztool's comprehensive farm management platform.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Button size="lg" asChild>
               <Link href="/request-demo">Request a Demo</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link href="/solutions">Learn More</Link>
             </Button>
+          </div>
+
+          {/* Added CountdownTimer here */}
+          <div className="mt-12 max-w-xl mx-auto">
+            <CountdownTimer />
           </div>
         </div>
       </div>

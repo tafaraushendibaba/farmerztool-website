@@ -1,6 +1,5 @@
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
-import CountdownTimer from "@/components/home/CountdownTimer";
 import StockImage from "@/components/shared/StockImage";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, FileText, Gauge, Trophy, Globe, Cloud, Smartphone, Wifi } from "lucide-react";
@@ -246,12 +245,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-      {/* Countdown Section */}
-      <section className="py-16 bg-muted/5 border-y">
-        <div className="container mx-auto px-4">
-          <CountdownTimer />
         </div>
       </section>
     </div>
