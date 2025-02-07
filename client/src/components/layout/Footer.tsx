@@ -103,7 +103,7 @@ export default function Footer() {
         <Separator className="my-8 bg-primary/10" />
 
         <div className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} FarmerzTool. All rights reserved.
+          © {new Date().getFullYear()} FarmerzTool. Software developed and owned by Creative Studiosz LLC. All rights reserved.
         </div>
       </div>
     </footer>
