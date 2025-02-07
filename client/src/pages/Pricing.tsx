@@ -64,7 +64,19 @@ export default function Pricing() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan) => (
-              <Card key={plan.name} className="flex flex-col hover:shadow-lg transition-shadow">
+              <Card 
+                key={plan.name} 
+                className={`flex flex-col hover:shadow-lg transition-shadow ${
+                  plan.name === "Monthly" 
+                    ? "border-primary border-2 shadow-lg relative" 
+                    : ""
+                }`}
+              >
+                {plan.name === "Monthly" && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                    Recommended
+                  </div>
+                )}
                 <CardHeader className="flex-grow">
                   <CardTitle>
                     <div className="text-2xl font-bold">{plan.name}</div>
@@ -89,7 +101,6 @@ export default function Pricing() {
                   <Button 
                     className="w-full mt-auto" 
                     size="lg" 
-                    variant={plan.name === "Annual" ? "default" : "outline"}
                     asChild
                   >
                     <Link href="/request-demo">
