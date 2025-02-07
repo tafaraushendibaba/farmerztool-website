@@ -159,40 +159,55 @@ const solutions = [
 
 export default function Solutions() {
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Solutions for Every Farmer</h1>
-          <p className="text-lg text-muted-foreground">
-            Comprehensive tools designed to optimize your farming operations
+    <div className="min-h-screen bg-background">
+      <div className="py-16 border-b bg-muted/5">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            Solutions for Every Farmer
+          </h1>
+          <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto">
+            Comprehensive tools designed to optimize your farming operations and increase productivity
           </p>
         </div>
+      </div>
 
-        <div className="space-y-16">
-          {solutions.map((solution) => (
-            <div key={solution.title} className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <solution.icon className="h-8 w-8 text-primary" />
-                <h2 className="text-2xl font-semibold">{solution.title}</h2>
-              </div>
-              <p className="text-lg text-muted-foreground mb-8">
-                {solution.description}
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {solution.features.map((feature) => (
-                  <Card key={feature.name}>
-                    <CardHeader>
-                      <feature.icon className="h-6 w-6 text-primary mb-2" />
-                      <CardTitle className="text-xl">{feature.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
+      <div className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="space-y-24">
+            {solutions.map((solution) => (
+              <section key={solution.title} className="scroll-mt-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="p-3 rounded-lg bg-primary/10">
+                    <solution.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-semibold">{solution.title}</h2>
+                    <p className="text-lg text-muted-foreground mt-1">
+                      {solution.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {solution.features.map((feature) => (
+                    <Card key={feature.name} className="hover:shadow-lg transition-shadow">
+                      <CardHeader className="space-y-1">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 rounded-md bg-primary/10">
+                            <feature.icon className="h-5 w-5 text-primary" />
+                          </div>
+                          <CardTitle className="text-xl">{feature.name}</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{feature.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </div>
     </div>
