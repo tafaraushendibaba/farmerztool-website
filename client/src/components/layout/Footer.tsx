@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import { SiAppstore, SiGoogleplay } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -44,33 +45,57 @@ export default function Footer() {
             </nav>
           </div>
 
-          <div>
-            <h4 className="font-medium mb-4">Connect With Us</h4>
-            <div className="flex space-x-4">
-              <a 
-                href="https://www.facebook.com/farmerztool/"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="https://www.instagram.com/creativestudioszllc/"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://www.youtube.com/@FarmerzTool"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Youtube size={20} />
-              </a>
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-medium mb-4">Connect With Us</h4>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://www.facebook.com/farmerztool/"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a 
+                  href="https://www.instagram.com/creativestudioszllc/"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@FarmerzTool"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Youtube size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-medium mb-4">Download Our App</h4>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://apps.apple.com/us/app/farmerztool"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiAppstore size={22} />
+                </a>
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.farmerztool"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiGoogleplay size={22} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
