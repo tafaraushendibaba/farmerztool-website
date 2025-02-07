@@ -1,8 +1,9 @@
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
+import CountdownTimer from "@/components/home/CountdownTimer";
 import StockImage from "@/components/shared/StockImage";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, FileText, Gauge, Trophy } from "lucide-react";
+import { Brain, FileText, Gauge, Trophy, Globe, Cloud, Smartphone, Wifi } from "lucide-react";
 
 const aiFeatures = [
   {
@@ -45,11 +46,49 @@ const benefits = [
   },
 ];
 
+const platformFeatures = [
+  {
+    title: "Web Application",
+    description: "Access FarmerzTool from any modern web browser",
+    icon: Globe,
+  },
+  {
+    title: "Mobile Apps",
+    description: "Native apps for Android and iOS devices",
+    icon: Smartphone,
+  },
+  {
+    title: "Offline Mode",
+    description: "Continue working without internet connection",
+    icon: Wifi,
+  },
+  {
+    title: "Cloud-Based",
+    description: "Secure cloud storage with automatic backups",
+    icon: Cloud,
+  },
+];
+
+const getStartedSteps = [
+  "Sign up for a free trial",
+  "Set up your farm profile",
+  "Import or enter your farm data",
+  "Customize your dashboard",
+  "Start managing your farm efficiently",
+];
+
 export default function Home() {
   return (
     <div>
       <Hero />
       <Features />
+
+      {/* Countdown Section */}
+      <section className="py-16 bg-muted/5">
+        <div className="container mx-auto px-4">
+          <CountdownTimer />
+        </div>
+      </section>
 
       {/* AI and ML Section */}
       <section className="py-24 bg-muted/5">
@@ -88,7 +127,7 @@ export default function Home() {
                 Comprehensive Management Suite
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                From health tracking to breeding management, FarmerzTool provides everything 
+                From health tracking to breeding management, FarmerzTool provides everything
                 you need to run your farm efficiently.
               </p>
               <div className="space-y-4">
@@ -106,6 +145,62 @@ export default function Home() {
             <StockImage
               src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae"
               alt="Modern farm management"
+              className="rounded-lg aspect-video"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Accessibility Section */}
+      <section className="py-24 bg-muted/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Access Anywhere, Anytime
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              FarmerzTool is designed to work seamlessly across all your devices
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {platformFeatures.map((feature) => (
+              <Card key={feature.title}>
+                <CardHeader>
+                  <feature.icon className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Getting Started Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">
+                Getting Started is Easy
+              </h2>
+              <div className="space-y-4">
+                {getStartedSteps.map((step, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
+                      {index + 1}
+                    </div>
+                    <p className="text-lg">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <StockImage
+              src="https://images.unsplash.com/photo-1590682687104-9f64c098604f"
+              alt="Getting started with FarmerzTool"
               className="rounded-lg aspect-video"
             />
           </div>
@@ -144,10 +239,10 @@ export default function Home() {
                 Transforming Agriculture Through Technology
               </h3>
               <p className="text-muted-foreground">
-                FarmerzTool brings the power of modern technology to your farm. Our platform 
-                helps you reduce costs, increase productivity, and make better decisions through 
-                data-driven insights. With features like automated documentation, AI-powered 
-                analytics, and comprehensive management tools, you can focus on what matters most: 
+                FarmerzTool brings the power of modern technology to your farm. Our platform
+                helps you reduce costs, increase productivity, and make better decisions through
+                data-driven insights. With features like automated documentation, AI-powered
+                analytics, and comprehensive management tools, you can focus on what matters most:
                 growing your farm business.
               </p>
             </div>
