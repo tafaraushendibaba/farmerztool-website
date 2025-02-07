@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/shared/Logo";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -20,9 +21,7 @@ export default function Header() {
   return (
     <header className="border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-          <a className="text-2xl font-bold text-primary">Farmerztool</a>
-        </Link>
+        <Logo />
 
         <NavigationMenu>
           <NavigationMenuList className="hidden md:flex space-x-6">
