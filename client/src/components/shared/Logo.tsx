@@ -5,7 +5,7 @@ export default function Logo() {
     <Link href="/">
       <div className="flex items-center gap-2">
         <img 
-          src="/attached_assets/logo.jpg"
+          src="/images/logo.jpg"
           alt="FarmerzTool Logo" 
           className="h-8 md:h-10 w-auto cursor-pointer object-contain"
         />
