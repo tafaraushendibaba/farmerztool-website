@@ -1,0 +1,102 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FarmerzTool{% endblock %}</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home:home' %}">
+                <img src="{% static 'images/logo.jpg' %}" alt="FarmerzTool Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
+                           href="{% url 'home:about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'solutions' %}active{% endif %}"
+                           href="{% url 'home:solutions' %}">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'pricing' %}active{% endif %}"
+                           href="{% url 'home:pricing' %}">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+                           href="{% url 'home:contact' %}">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="https://app.farmerztool.com/login" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="{% url 'home:request_demo' %}" class="btn btn-primary">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5 border-top mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>FarmerzTool</h5>
+                    <p class="text-muted small">Making farm management simpler and more efficient through data-driven decisions.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'home:about' %}" class="text-decoration-none text-muted">About</a></li>
+                        <li><a href="{% url 'home:solutions' %}" class="text-decoration-none text-muted">Solutions</a></li>
+                        <li><a href="{% url 'home:pricing' %}" class="text-decoration-none text-muted">Pricing</a></li>
+                        <li><a href="{% url 'home:contact' %}" class="text-decoration-none text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.facebook.com/farmerztool/" class="text-muted" target="_blank" rel="noopener">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/creativestudioszllc/" class="text-muted" target="_blank" rel="noopener">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@FarmerzTool" class="text-muted" target="_blank" rel="noopener">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center text-muted small mb-0">
+                © {% now "Y" %} FarmerzTool. Software developed and owned by Creative Studiosz LLC. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    {% bootstrap_javascript %}
+</body>
+</html>

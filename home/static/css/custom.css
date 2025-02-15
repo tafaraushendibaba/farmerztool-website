@@ -1,0 +1,42 @@
+/* Custom styles */
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 6rem 0;
+}
+
+.feature-card {
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-primary {
+    background-color: #2d7b43;
+    border-color: #2d7b43;
+}
+
+.btn-primary:hover {
+    background-color: #246435;
+    border-color: #246435;
+}
+
+.btn-outline-primary {
+    color: #2d7b43;
+    border-color: #2d7b43;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2d7b43;
+    border-color: #2d7b43;
+}
+
+.text-primary {
+    color: #2d7b43 !important;
+}
